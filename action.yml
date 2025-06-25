@@ -8,7 +8,7 @@ inputs:
 
 
 runs:
-     using: composite
+  using: composite
   steps:
     - id: invoke-action
       name: invoke-action
