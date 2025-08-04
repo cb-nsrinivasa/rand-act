@@ -26,4 +26,6 @@ runs:
       name: invoke-action
       uses: docker://golang:1.20.3-alpine3.17 
       shell: sh
-      run: exit 1
+      run: |
+        echo "Exiting due to error: <your message here>" >&2
+        exit 1
