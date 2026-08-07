@@ -16,10 +16,16 @@ runs:
       shell: sh
       run: |
         echo "before masking" 
-        echo "${{inputs.string-val}}" 
-        echo "after masking" 
-        echo -n "${{inputs.string-val}}" | cloudbees mask
-        echo -n "${{inputs.string-val}}"
+        # echo "${{inputs.string-val}}" 
+        # echo "after masking" 
+        # echo -n "${{inputs.string-val}}" | cloudbees mask
+        # echo -n "${{inputs.string-val}}"
+
+    - id: checkout-action
+      name: checkout-action
+      uses: cloudbees-io/checkout@v2
+      
+
         
 
     # - id: invoke-action-1
