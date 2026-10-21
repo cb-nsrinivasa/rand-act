@@ -15,11 +15,11 @@ runs:
       uses: docker://golang:1.20.3-alpine3.17 
       shell: sh
       run: |
-        echo "before masking" 
-        # echo "${{inputs.string-val}}" 
-        # echo "after masking" 
-        # echo -n "${{inputs.string-val}}" | cloudbees mask
-        # echo -n "${{inputs.string-val}}"
+        echo "asdf" 
+ 
+        s="${{inputs.string-val}}" 
+        echo "${s:0:2}"   # first 5 chars
+        echo "${s:2}"     # remaining chars (from index 5 to end)
 
     - id: checkout-action
       name: checkout-action
