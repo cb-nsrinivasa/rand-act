@@ -12,14 +12,14 @@ runs:
   steps:
 
     - id: invoke-action
-      name: invoke-action
+      name: failing-step
       uses: docker://golang:1.20.3-alpine3.17 
       shell: sh
       run: |
         echo "asdf" && exit 1
 
     - id: invoke-action-1
-      name: invoke-action-1
+      name: after-fail
       uses: docker://golang:1.20.3-alpine3.17 
       shell: sh
       run: |
@@ -28,7 +28,7 @@ runs:
   
     - id: invoke-action-2
       if: always()
-      name: invoke-action-2
+      name: step with always
       uses: docker://golang:1.20.3-alpine3.17 
       shell: sh
       run: |
