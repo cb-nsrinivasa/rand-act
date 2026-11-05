@@ -19,7 +19,7 @@ runs:
         echo "asdf" && exit 1
 
     - id: invoke-action
-      if always()
+      if: always()
       name: invoke-action
       uses: docker://golang:1.20.3-alpine3.17 
       shell: sh
